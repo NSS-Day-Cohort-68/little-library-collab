@@ -170,3 +170,13 @@ const Database = {
     },
   ],
 };
+
+// - `Database.js`
+//     - Functions:
+//       - Export getter functions for all collections:
+//         - `getBooks`
+//         - `getAuthors`
+//         - `getPatrons`
+//         - `getGenres`
+//         - `getBookGenres`
+//         - `getBookLogs`
