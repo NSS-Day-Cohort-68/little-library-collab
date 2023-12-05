@@ -180,3 +180,18 @@ const Database = {
 //         - `getGenres`
 //         - `getBookGenres`
 //         - `getBookLogs`
+
+// export const getBooks = () => {
+// Step 1
+// step 2
+// return
+// }
+
+export const getBooks = () => Database.books.map((book) => ({ ...book }));
+export const getAuthors = () =>
+  Database.authors.map((author) => ({ ...author }));
+export const getPatrons = () =>
+  Database.patrons.map((patron) => ({ ...patron }));
+export const getGenres = () => structuredClone(Database.genres);
+export const getBookGenres = () => structuredClone(Database.bookGenres);
+export const getBookLogs = () => structuredClone(Database.bookLogs);
