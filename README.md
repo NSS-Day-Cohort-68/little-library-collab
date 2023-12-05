@@ -20,3 +20,12 @@ Let's build a very small library.
 - Both the book inventory and the book logs should be displayed in a tabular format
 - The checkout functionality should be in the inventory table
 - The return functionality should be in the book log table
+
+#### Stretch goals
+
+- Search authors
+
+##### Notes
+
+- Does returned belong on the book or the bookLog?
+- Talk about temporary state...
