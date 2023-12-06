@@ -1,0 +1,42 @@
+Table Author {
+    id int
+    name string
+}
+
+Table Genre {
+    id int
+    type string
+}
+
+Table Patron {
+    id int
+    name string
+    libraryCard string
+}
+
+Table Book {
+    id int
+    title string
+    pages int
+    authorId int
+}
+
+Table BookGenre {
+    id int
+    bookId int
+    genreId int
+}
+
+Table BookLog {
+    id int
+    checkoutDate string
+    isReturned boolean
+    patronId int
+    bookId int
+}
+
+Ref: Book.authorId > Author.id
+Ref: BookGenre.bookId > Book.id
+Ref: BookGenre.genreId > Genre.id
+Ref: BookLog.patronId > Patron.id
+Ref: BookLog.bookId > Book.id
