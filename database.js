@@ -68,6 +68,7 @@ const Database = {
     { id: 19, name: "Jack London" },
     { id: 20, name: "Kenneth Grahame" },
     { id: 21, name: "Rudyard Kipling" },
+    { id: 22, name: "Joseph Conrad" },
   ],
   genres: [
     { id: 1, type: "Science Fiction" },
