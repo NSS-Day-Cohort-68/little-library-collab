@@ -18,7 +18,7 @@ export const getBookGenre = (bookId) => {
     (bookGenre) => bookGenre.bookId === bookId
   );
 
-  const bookGenreNames = filteredBookGenres.forEach((bookGenre) =>
+  const bookGenreNames = filteredBookGenres.map((bookGenre) =>
     getGenre(bookGenre.genreId)
   );
 
