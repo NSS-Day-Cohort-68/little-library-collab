@@ -30,3 +30,4 @@ Let's build a very small library.
 - Does returned belong on the book or the bookLog?
 - Talk about temporary state...
 - Do some error checking with Author module
+- Revisit return date using datetimes
