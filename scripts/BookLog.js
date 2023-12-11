@@ -3,7 +3,7 @@
 // Display a list of book logs with the name of the borrower, the library card info, the book lent, the checkout date & the date due
 
 //     - Import `getBookLogs` from `Database.js`
-import { getBookLogs } from "../database.js";
+import { getBookLogs, getPatrons } from "../database.js";
 //     - Import `getPatron` from `Patron.js`
 import { getPatron } from "./Patron.js";
 //     - Import `getBook` from `Book.js`
@@ -45,9 +45,20 @@ export const bookLogList = () => {
 //                      For each bookLog:
 //                          Invoke getPatron and pass the patronId
 //                              Store the returned patron object in the filteredBookLOg object as .patron
-//                          Invoke getBook and pass the bookId
-//                              Store the returned book object in the filteredBookLog object as .book4
 //                  Return filteredBookLog array  (LET'S THINK ABOUT THIS WHEN IT'S TIME)
+
+export const getBookLogsByBookId = (bookId) => {
+  const allBookLogs = getBookLogs();
+
+  const filteredBookLogs = allBookLogs.filter(
+    (bookLog) => bookLog.bookId === bookId
+  );
+  filteredBookLogs.map((bookLog) => {
+    bookLog.patron = getPatron(bookLog.patronId);
+  });
+  return filteredBookLogs;
+};
+
 // START WITH THIS:
 // {
 //     id: 1,
@@ -68,11 +79,5 @@ export const bookLogList = () => {
 //            name: "Alice Trammel",
 //            libraryCard: "ALICE123"
 //            }
-//     bookId: 3,
-//     book: {
-//            id: 30,
-//            title: "Lord Jim",
-//            pages: 428,
-//            authorId: 22
-//            }
+//     bookId: 3
 //   }
